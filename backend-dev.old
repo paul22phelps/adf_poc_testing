@@ -1,0 +1,5 @@
+# these can be set on the CLI during the init phase as well
+storage_account_name  = "c794090688d5"
+container_name        = "adfpoc"
+key                   = "dev.tfstate"
+resource_group_name   = "hw-pipelines-dev-rg"
