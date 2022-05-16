@@ -1,10 +1,10 @@
 variable "subscription_id" {
-  type = string
-  default = ""
+  type        = string
+  default     = ""
   description = "Azure Subscription ID to perform actions against"
 }
-  
-  variable "location" {
+
+variable "location" {
   description = "Azure Location used"
   default     = "eastus2"
 }
@@ -45,32 +45,41 @@ variable "application_name" {
   default = "testapp2999"
 }
 
+variable "github_configuration" {
+  type = map(object({
+  gh_acct_name = string
+  gh_branch_name = string
+  gh_repo_name = string
+  gh_root_folder = string
+  git_url = string
+  }))
+}
 variable "gh_acct_name" {
-  type = string
-  default = "krogertechnology"
+  type        = string
+  default     = "krogertechnology"
   description = "The GitHub Account Name"
 }
 
 variable "gh_branch_name" {
-  type = string
-  default = "main"
+  type        = string
+  default     = "main"
   description = "The GitHub Branch Name"
 }
 
 variable "gh_repo_name" {
-  type = string
-  default = ""
+  type        = string
+  default     = ""
   description = "The GitHub Repository Name"
 }
 
 variable "gh_root_folder" {
-  type = string
-  default = "/"
+  type        = string
+  default     = "/"
   description = "The GitHub Root Folder"
 }
 
 variable "git_url" {
-  type = string
-  default = "https://github.com"
+  type        = string
+  default     = "https://github.com"
   description = "The Git URL"
 }
