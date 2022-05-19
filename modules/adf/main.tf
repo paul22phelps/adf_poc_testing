@@ -14,13 +14,13 @@ resource "azurerm_data_factory" "adf_with_azure_integrated_vnet" {
   managed_virtual_network_enabled = true
 
   dynamic "github_configuration" {
-    for_each = var.github_configuration == "dev" ? [1] : [] #set env. via variable.tf
+    for_each = var.environment == "dev" ? [1] : [] #set env. via variable.tf
     content {
-      account_name    = var.value.gh_acct_name
-      branch_name     = var.value.gh_branch_name
-      repository_name = var.value.gh_repo_name
-      root_folder     = var.value.gh_root_folder
-      git_url         = var.value.git_url
+      account_name    = var.github_configuration.gh_acct_name
+      branch_name     = var.github_configuration.gh_branch_name
+      repository_name = var.github_configuration.gh_repo_name
+      root_folder     = var.github_configuration.gh_root_folder
+      git_url         = var.github_configuration.git_url
     }
   }
 

@@ -45,42 +45,12 @@ variable "application_name" {
   default = "testapp2999"
 }
 
-
 variable "github_configuration" {
   type = map(object({
-  gh_acct_name = string
-  gh_branch_name = string
-  gh_repo_name = string
-  gh_root_folder = string
-  git_url = string
+    gh_acct_name   = string
+    gh_branch_name = string
+    gh_repo_name   = string
+    gh_root_folder = string
+    git_url        = string
   }))
-}
-variable "gh_acct_name" {
-  type        = string
-  default     = "paul22phelps"
-  description = "The GitHub Account Name"
-}
-
-variable "gh_branch_name" {
-  type        = string
-  default     = "main"
-  description = "The GitHub Branch Name"
-}
-
-variable "gh_repo_name" {
-  type        = string
-  default     = "hw-testappadf-adf"
-  description = "The GitHub Repository Name"
-}
-
-variable "gh_root_folder" {
-  type        = string
-  default     = "/"
-  description = "The GitHub Root Folder"
-}
-
-variable "git_url" {
-  type        = string
-  default     = "https://github.com"
-  description = "The Git URL"
 }
